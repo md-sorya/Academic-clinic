@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>برنامج العيادة الأكاديمية</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- الصفحة الرئيسية -->
+<div id="homePage" class="center card">
+<h1>مؤسسة عائشة بخيت التعليمية الخاصة</h1>
+<h2>برنامج العيادة الأكاديمية</h2>
+<p>اختر دورك:</p>
+<button onclick="showSupervisor()">لوحة الإشراف</button>
+<button onclick="showAdmin()">لوحة الإدارة</button>
+</div>
+
+<!-- لوحة الإشراف -->
+<div id="supervisorPage" style="display:none">
+<header>لوحة الإشراف – برنامج العيادة الأكاديمية</header>
+<div class="card">
+<h3>إضافة طالب</h3>
+<input id="name" placeholder="اسم الطالب">
+<input id="className" placeholder="الفصل">
+<input id="housing" placeholder="السكن">
+<input id="phone" placeholder="رقم الهاتف">
+<button onclick="addStudent()">حفظ الطالب</button>
+</div>
+<div class="card">
+<h3>قائمة الطلاب</h3>
+<table id="studentsTable"></table>
+</div>
+<button onclick="backHome()">العودة للصفحة الرئيسية</button>
+</div>
+
+<!-- لوحة الإدارة -->
+<div id="adminPage" style="display:none">
+<header>لوحة الإدارة – برنامج العيادة الأكاديمية</header>
+<div class="card">
+<input id="query" placeholder="بحث (ملف – اسم – سكن – فصل – مادة – جزئية – أستاذ)">
+<button onclick="search()">بحث</button>
+</div>
+<table id="results"></table>
+<button onclick="backHome()">العودة للصفحة الرئيسية</button>
+</div>
+
+<!-- صفحة الطالب -->
+<div id="studentPage" style="display:none">
+<header>ملف الطالب – برنامج العيادة الأكاديمية</header>
+<div class="card" id="studentInfo"></div>
+<div class="card">
+<h3>إضافة مشكلة</h3>
+<input id="subject" placeholder="المادة">
+<input id="part" placeholder="الجزئية">
+<input id="type" placeholder="نوع المشكلة">
+<input id="teacher" placeholder="الأستاذ">
+<input id="notes" placeholder="ملاحظات">
+<button onclick="addProblem()">إضافة</button>
+</div>
+<div class="card">
+<h3>مشاكل الطالب</h3>
+<table id="problemsTable"></table>
+</div>
+<button onclick="backSupervisor()">العودة للوحة الإشراف</button>
+
+<script src="script.js"></script>
+</body>
+</html>
